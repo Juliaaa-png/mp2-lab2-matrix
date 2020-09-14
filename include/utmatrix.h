@@ -1,5 +1,5 @@
 ﻿// ННГУ, ВМК, Курс "Методы программирования-2", С++, ООП
-//
+// модификация
 // utmatrix.h - Copyright (c) Гергель В.П. 07.05.2001
 //   Переработано для Microsoft Visual Studio 2008 Сысоевым А.В. (21.04.2015)
 //
@@ -82,6 +82,7 @@ ValType& TVector<ValType>::operator[](int pos)
 template <class ValType> // сравнение
 bool TVector<ValType>::operator==(const TVector &v) const
 {
+    return true;
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // сравнение
