@@ -68,7 +68,8 @@ TEST(TVector, throws_when_set_element_with_negative_index)
 
 TEST(TVector, throws_when_set_element_with_too_large_index)
 {
-  ADD_FAILURE();
+	TVector <int> v(100);
+	ASSERT_ANY_THROW (v[200] = 1);
 }
 
 TEST(TVector, can_assign_vector_to_itself)
@@ -88,7 +89,15 @@ TEST(TVector, assign_operator_change_vector_size)
 
 TEST(TVector, can_assign_vectors_of_different_size)
 {
-  ADD_FAILURE();
+	TVector<int> a(5), b(3);
+	for (int i = 0; i < a.GetSize(); i++)
+		a[i] = i + 1;
+
+	ASSERT_NO_THROW(b = a);
+
+	for (int i = 0; i < a.GetSize(); i++)
+		EXPECT_EQ(b[i], i + 1);
+
 }
 
 TEST(TVector, compare_equal_vectors_return_true)
